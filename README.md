@@ -19,7 +19,7 @@ git config --global user.email fulanodetal@exemplo.br
 ```
 git clone https://github.com/marcioaraya/pw-1.24-mat.git
 ```
-Este comando irá criar uma pasta com o nome do repositório **pw-2.23-not**. Caso deseje, pode alterar o nome da pasta que será criada, basta acrescentar o nome escolhido depois do comando:
+Este comando irá criar uma pasta com o nome do repositório **pw-1.24-mat**. Caso deseje, pode alterar o nome da pasta que será criada, basta acrescentar o nome escolhido depois do comando:
 ```
 git clone https://github.com/marcioaraya/pw-1.24-mat.git padroes_web
 ```
