@@ -1,0 +1,9 @@
+body {color:white;
+    background-color: rgb(0, 0, 0);
+   text-align:center}
+#um {color: red;}
+#dois {color: green;}
+p {color:magenta;}
+div {width: 50%;
+    border-radius: 25px;
+    background-color: yellow;}
