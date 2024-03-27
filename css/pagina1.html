@@ -4,27 +4,57 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSS</title>
+    <title>Cascading Style Sheet</title>
     <style>
-       body {color:white;
-             background-color: rgb(0, 0, 0);
-            text-align:center}
-        #um {color: red;}
-        #dois {color: green;}
-        p {color:magenta;}
-        div {width: 50%;
-             border-radius: 25px;
-             background-color: yellow;}
+        body {background-color: yellow; color:green;}
+        h1 {background-color: blue; color:yellow}
+        p {font-family: 'Courier New', Courier, monospace;
+           font-size: 25px;
+            text-align: center;}
+        #um {border-left: 10px solid brown;
+            text-decoration-line: underline;
+            text-decoration-color: blue;
+             text-align: left;}
+        h1:hover {font-size: 50px ;
+                    color:magenta}
+        
+         table, td {border-collapse: collapse;
+               border: dotted 1px black}
+/* comentário */
+         tr:nth-child(even) {background-color: gray;}
+         tr:nth-child(odd) {background-color: white;}
+         
     </style>
 </head>
 <body>
     <div>
         <h1>Cabeçalho</h1>
-        <p id="um" style="text-align: right;">Parágrafo um</p>
+        <p id="um" >Parágrafo um</p>
         <p id="dois">Parágrafo dois</p>
         <p>Três</p>
     </div>
 
-
+    <table>
+        <tr >
+            <td>A</td>
+            <td>B</td>
+            <td>C</td>
+        </tr>
+        <tr>
+            <td>D</td>
+            <td>E</td>
+            <td>F</td>
+        </tr>
+        <tr>
+            <td>G</td>
+            <td>H</td>
+            <td>I</td>
+        </tr>
+        <tr>
+            <td>J</td>
+            <td>K</td>
+            <td>L</td>
+        </tr>
+    </table>
 </body>
 </html>
