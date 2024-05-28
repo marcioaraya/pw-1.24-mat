@@ -1,5 +1,5 @@
 # pw-1.24-mat
-Códigos da disciplina Padrões Web - 1.24 - 1ºADS - matutino
+Códigos da disciplina Padrões Web - 1.24 - 1ºADS - matutino/noturno - prof. Marcio Araya
   
 Neste repositório vamos disponibilizar os códigos elaborados nas aulas da disciplina **Padrões Web** ministradas no primeiro semestre de 2024 para a turma **A** do 1º ADS do turno matutino da **Faculdade de Tecnologia e Inovação Senac DF**.
   
