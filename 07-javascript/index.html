@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+</head>
+
+<body>
+    <h1>Soma</h1>
+
+    <form>
+        <input type="text" name="valor1" id="valor1" placeholder="Digite o primeiro valor">
+        <br>
+        <input type="text" name="valor2" id="valor2" placeholder="Digite o segundo valor">
+        <br>
+        <input type="radio" name="operacao" value="soma" id="soma">
+        <label for="soma">Soma</label>
+        <br>
+        <input type="radio" name="operacao" value="subtracao" id="subtracao">
+        <label for="soma">Subtração</label>
+        <br>
+        <input type="radio" name="operacao" value="multiplicacao" id="multiplicacao">
+        <label for="soma">Multiplicação</label>
+        <br>
+        <input type="radio" name="operacao" value="divisao" id="divisao">
+        <label for="soma">Divisão</label>
+        <br>
+        <input type="submit" value="Calcular" onclick="calcular()">
+    </form>
+    <br>
+    <p>Resultado:<span id="resultado"></span></p>
+    <script>
+        function calcular() {
+            let nr1 = parseFloat(document.getElementById("valor1").value);
+            let nr2 = parseFloat(document.getElementById("valor2").value);
+            console.log('primeiro número: ' + nr1);
+            console.log('segundo número: ' + nr2);
+            let soma = nr1 + nr2;
+            console.log('resultado: '+soma);
+            document.getElementById('resultado').innerHTML = soma;
+
+            event.preventDefault();
+
+        }
+    </script>
+
+</body>
+
+</html>
