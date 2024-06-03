@@ -11,39 +11,62 @@
 <body>
     <h1>Soma</h1>
 
-    <form>
+    <form >
         <input type="text" name="valor1" id="valor1" placeholder="Digite o primeiro valor">
         <br>
         <input type="text" name="valor2" id="valor2" placeholder="Digite o segundo valor">
         <br>
-        <input type="radio" name="operacao" value="soma" id="soma">
+        <!-- botões de radio formam um grupo quando tem o mesmo 
+            valor para o atributo 'name'
+            
+        -->
+        <input type="radio" name="operacao1" value="soma" id="soma" >
         <label for="soma">Soma</label>
         <br>
-        <input type="radio" name="operacao" value="subtracao" id="subtracao">
-        <label for="soma">Subtração</label>
+        <input type="radio" name="operacao2" value="subtracao" id="subtracao">
+        <label for="subtracao">Subtração</label>
         <br>
-        <input type="radio" name="operacao" value="multiplicacao" id="multiplicacao">
-        <label for="soma">Multiplicação</label>
+        <input type="radio" name="operacao3" value="multiplicacao" id="multiplicacao">
+        <label for="multiplicacao">Multiplicação</label>
         <br>
-        <input type="radio" name="operacao" value="divisao" id="divisao">
-        <label for="soma">Divisão</label>
+        <input type="radio" name="operacao4" value="divisao" id="divisao" >
+        <label for="divisao">Divisão</label>
         <br>
-        <input type="submit" value="Calcular" onclick="calcular()">
+
+        <input type="submit" value="Calcular" onclick="calcular(event)">
+
     </form>
     <br>
     <p>Resultado:<span id="resultado"></span></p>
     <script>
-        function calcular() {
+        function calcular(event) {
+            event.preventDefault();
+
             let nr1 = parseFloat(document.getElementById("valor1").value);
             let nr2 = parseFloat(document.getElementById("valor2").value);
             console.log('primeiro número: ' + nr1);
             console.log('segundo número: ' + nr2);
-            let soma = nr1 + nr2;
-            console.log('resultado: '+soma);
-            document.getElementById('resultado').innerHTML = soma;
+            // descobrir qual é o botão de rádio marcado
+            console.log('botão soma: '+document.getElementById('soma').checked);
+            console.log('botão subtração: '+document.getElementById('subtracao').checked);
+            console.log('botão multiplicação: '+document.getElementById('multiplicacao').checked);
+            console.log('botão divisão: '+document.getElementById('divisao').checked);
+            
+            let resultado = 0;
+            if (document.getElementById('soma').checked) {
+                resultado = nr1 + nr2;
+            } else if (document.getElementById('subtracao').checked) {
+                resultado = nr1 - nr2;
+            } else if (document.getElementById('multiplicacao').checked) {
+                resultado = nr1 * nr2;
+            } else if (document.getElementById('divisao').checked) {
+                resultado = nr1 / nr2;
+            }
+            
+            console.log('resultado: '+resultado);
+            document.getElementById('resultado').innerHTML = resultado;
 
-            event.preventDefault();
-
+            
         }
     </script>
 
