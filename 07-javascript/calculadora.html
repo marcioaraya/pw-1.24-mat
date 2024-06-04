@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Simples</title>
+</head>
+<body>
+    <h1>Calculadora Simples</h1>
+    <script>
+        let nr1 = parseFloat(prompt('Digite um número:'));
+        let nr2 = parseFloat(prompt('Digite outro número número:'));
+        let op = prompt('Escolha uma operação: 1 - Soma / 2 - Subtração');
+        console.log('operacao:'+ typeof(op) + ' : ' + op);
+        let resultado = 0;
+        if (op === '1') {
+            resultado = nr1 + nr2;
+            alert('O resultado é ' + resultado);
+        } else if (op === '2') {
+            resultado = nr1 - nr2;
+            alert('O resultado é ' + resultado);
+        } else {
+            alert('Operação inválida!');
+        }
+        
+    </script>
+</body>
+</html>
