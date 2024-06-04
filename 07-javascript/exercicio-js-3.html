@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>The Element Object</h1>
+    <h2>The appendChild() Method</h2>
+
+    <ul id="myList">
+        <li>Coffee</li>
+        <li>Tea</li>
+    </ul>
+
+    <br>
+    <input type="text" id="palavra">
+    <br>
+    <input type="radio" name="cores" value="red" id="red">
+    <label for="red">Vermelho</label>
+    <input type="radio" name="cores" value="green" id="green">
+    <label for="green">Verde</label>
+    <input type="radio" name="cores" value="blue" id="blue">
+    <label for="blue">Azul</label>
+    
+    <p>Click "Append" to append an item to the end of the list:</p>
+
+    <button onclick="myFunction()">Append</button>
+
+    <script>
+        function myFunction() {
+
+            // Create an "li" node:
+            const node = document.createElement("li");
+
+            // Create a text node:
+            let palavra = document.getElementById('palavra').value;
+            const textnode = document.createTextNode(palavra);
+
+            // Append the text node to the "li" node:
+            node.appendChild(textnode);
+
+            // Append the "li" node to the list:
+            let cor = document.querySelector('input[name="cores"]:checked').value;
+            node.style.color = cor;
+            document.getElementById("myList").appendChild(node);
+        }
+    </script>
+</body>
+
+</html>
