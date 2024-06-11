@@ -18,11 +18,15 @@
 </div>
 <script>
 function loadDoc() {
-    // cria objeto XMLHttpRequest
+    // recupera o CEP que foi digitado pelo usuário
   let cep =  parseInt(document.getElementById("cep").value); 
-  var xhttp = new XMLHttpRequest();
 
-  // prepara o tratamento da resposta
+    // cria objeto XMLHttpRequest que servirá para controlar a comunicação
+    // do navegador com o servidor (site do ViaBrasil)
+  let xhttp = new XMLHttpRequest();
+
+  // prepara o tratamento da resposta 
+  // deve ser feito antes de preparar e mandar a requisição
   xhttp.onreadystatechange = function() {
       // readState 4 = resposta recebida
       // status 200 = resposta OK
@@ -34,7 +38,8 @@ function loadDoc() {
       document.getElementById("localidade").value=endereco.localidade ;
       document.getElementById("uf").value=endereco.uf ;
       
-     // document.getElementById("demo").innerHTML = this.responseText;
+     // o que ocorrerá se retirar o comentário da linha abaixo? 
+     //document.getElementById("demo").innerHTML = this.responseText;
     }
   };
   // prepara a solicitação
