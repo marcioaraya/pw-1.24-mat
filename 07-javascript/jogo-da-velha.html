@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Velha</title>
+    <style>
+        td {
+            width: 30px;
+            text-align: center
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Jogo da Velha</h1>
+    <br>
+    <table border="1">
+        <tr>
+            <td id="c11"></td>
+            <td id="c12"> </td>
+            <td id="c13"> </td>
+        </tr>
+        <tr>
+            <td id="c21"> </td>
+            <td id="c22"> </td>
+            <td id="c23"> </td>
+        </tr>
+        <tr>
+            <td id="c31"></td>
+            <td id="c32"></td>
+            <td id="c33"></td>
+        </tr>
+    </table>
+    <script>
+        let jogador = 1;
+        document.addEventListener('click', function (event) {
+            // Verifica se o elemento clicado tem um ID
+            if (event.target.id) {
+                // Obtém o ID do elemento clicado
+                var idDoElemento = event.target.id;
+                console.log('ID do elemento clicado:', idDoElemento);
+                if (jogador==1) {
+                    document.getElementById(idDoElemento).innerHTML='O';
+                    jogador = 2;
+                } else {
+                    document.getElementById(idDoElemento).innerHTML='X';
+                    jogador =1;
+                }
+                
+            } else {
+                console.log('O elemento clicado não tem ID.');
+            }
+        });
+
+
+    </script>
+</body>
+
+</html>
