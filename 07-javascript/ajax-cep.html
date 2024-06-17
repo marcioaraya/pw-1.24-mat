@@ -43,6 +43,7 @@ function loadDoc() {
     }
   };
   // prepara a solicitação
+  console.log('cep:'+cep);
   xhttp.open("GET", "https://viacep.com.br/ws/"+cep+"/json", true);
   // envia a solicitação
   xhttp.send();
