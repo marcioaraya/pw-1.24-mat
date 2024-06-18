@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Velha</title>
+    <style>
+        td {
+            width: 30px;
+            text-align: center
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Jogo da Velha</h1>
+    <br>
+    <table border="1">
+        <tr>
+            <td id="c11" onclick="jogada(this.id)"> &nbsp; </td>
+            <td id="c12" onclick="jogada(this.id)"> &nbsp; </td>
+            <td id="c13" onclick="jogada(this.id)"> &nbsp; </td>
+        </tr>
+        <tr>
+            <td id="c21" onclick="jogada(this.id)"> &nbsp; </td>
+            <td id="c22" onclick="jogada(this.id)"> &nbsp; </td>
+            <td id="c23" onclick="jogada(this.id)"> &nbsp; </td>
+        </tr>
+        <tr>
+            <td id="c31" onclick="jogada(this.id)"> &nbsp; </td>
+            <td id="c32" onclick="jogada(this.id)"> &nbsp; </td>
+            <td id="c33" onclick="jogada(this.id)"> &nbsp; </td>
+        </tr>
+    </table>
+    <script>
+/* MELHORIAS A IMPLEMENTAR:
+1) Se uma célula já estiver preenchida, não deve poder mudar o valor
+2) Verificar se houve jogada vencedora (usar if)
+3) Acrescentar um botão para limpar o tabuleiro
+*/
+
+
+        // this.id é outra forma de descobrir qual é o id do elemento clicado 
+        // "this" representa o elemento que sofreu o evento
+
+        let jogador = 1;
+        function jogada(v_id){
+            // Verifica se o elemento clicado tem um ID
+                console.log('ID do elemento clicado:', v_id);
+                if (jogador == 1) {
+                    document.getElementById(v_id).innerHTML = 'O';
+                    jogador = 2;
+                } else {
+                    document.getElementById(v_id).innerHTML = 'X';
+                    jogador = 1;
+                }
+
+        };
+
+
+    </script>
+</body>
+
+</html>
