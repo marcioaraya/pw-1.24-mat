@@ -9,6 +9,7 @@
     <style>
         td {
             width: 30px;
+            height: 30px;
             text-align: center
         }
     </style>
@@ -35,27 +36,36 @@
         </tr>
     </table>
     <script>
-/* MELHORIAS A IMPLEMENTAR:
-1) Se uma célula já estiver preenchida, não deve poder mudar o valor
-2) Verificar se houve jogada vencedora (usar if)
-3) Acrescentar um botão para limpar o tabuleiro
-*/
+        /* MELHORIAS A IMPLEMENTAR:
+        1) Se uma célula já estiver preenchida, não deve poder mudar o valor
+        2) Verificar se houve jogada vencedora (usar if)
+        3) Acrescentar um botão para limpar o tabuleiro
+        */
 
 
         // this.id é outra forma de descobrir qual é o id do elemento clicado 
         // "this" representa o elemento que sofreu o evento
 
-        let jogador = 1;
-        function jogada(v_id){
+        let jogador = true; // true = jogador X
+        // false = jogador O
+
+        function jogada(v_id) {
             // Verifica se o elemento clicado tem um ID
-                console.log('ID do elemento clicado:', v_id);
-                if (jogador == 1) {
-                    document.getElementById(v_id).innerHTML = 'O';
-                    jogador = 2;
-                } else {
+            console.log('ID do elemento clicado:', v_id);
+            // recupera o conteúdo da célula clicada
+            let conteudo = document.getElementById(v_id).innerHTML;
+            console.log(conteudo);
+            if (conteudo === ' &nbsp; ') {
+                if (jogador) {
                     document.getElementById(v_id).innerHTML = 'X';
-                    jogador = 1;
+                } else {
+                    document.getElementById(v_id).innerHTML = 'O';
                 }
+                jogador = !jogador;
+            }
+
+  
+
 
         };
 
