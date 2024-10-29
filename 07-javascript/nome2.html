@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo</title>
+</head>
+
+<body>
+    <h1>Exemplo</h1>
+    <br>
+    <form>
+        <input type="text" id="id_nome" placeholder="Digite nome">
+        <input type="text" id="id_idade" placeholder="Digite idade">
+
+        <input type="submit" onclick="processa()">
+    </form>
+    <br>
+    <p id="nome"> </p>
+    <p id="idade"> </p>
+    <script>
+        function processa() {
+            // lê o valor contido na caixa criada pelo input
+            let nome = document.getElementById('id_nome').value;
+            let idade = document.getElementById('id_idade').value;
+
+            if (!isNaN(idade)) {
+                idade = parseInt(idade);
+                // escreve saudação para nome informado
+                document.getElementById("nome").innerHTML = '<b>Olá, ' + nome + '!</b>';
+                document.getElementById("idade").innerHTML = 'Sua idade é ' + idade + ' anos. Você é '+verificaIdade(idade)+'.';
+                
+            } else {
+                alert('Deve digitar uma idade válida');
+            }
+
+            // evita o envio dos dados para o backend
+            event.preventDefault();
+        }
+
+        // de acordo com a idade diga 
+        // 0 - 11 -> criança
+        // 12 - 17 -> adolescente
+        // 18 - 59 -> adulto
+        // > 60 -> idoso
+        function verificaIdade(id) {
+            if (id >= 60) {
+                return 'idoso';
+            } else if (id>= 18 && id < 60) {
+                return 'adulto';
+            } else if (id >= 12 && id < 18) {
+                return 'adolescente';
+            } else if (id >= 0 && id < 12) {
+                return 'criança';
+            } else {
+                return 'idade inválida';
+            }
+        }
+
+    </script>
+</body>
+
+</html>
