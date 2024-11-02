@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exemplo</title>
 </head>
-
 <body>
     <h1>Exemplo</h1>
     <br>
@@ -43,15 +41,15 @@
         // 0 - 11 -> criança
         // 12 - 17 -> adolescente
         // 18 - 59 -> adulto
-        // > 60 -> idoso
+        // >= 60 -> idoso
         function verificaIdade(id) {
             if (id >= 60) {
                 return 'idoso';
-            } else if (id>= 18 && id < 60) {
+            } else if (id>= 18) {
                 return 'adulto';
-            } else if (id >= 12 && id < 18) {
+            } else if (id >= 12) {
                 return 'adolescente';
-            } else if (id >= 0 && id < 12) {
+            } else if (id >= 0) {
                 return 'criança';
             } else {
                 return 'idade inválida';
